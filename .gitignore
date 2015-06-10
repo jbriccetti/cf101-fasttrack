@@ -1,6 +1,79 @@
-node_modules/
-bower_components/
-*.log
+#http://miguelmota.com/blog/extensive-gitignore/
 
-build/
-dist/
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+# Icon?
+ehthumbs.db
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+
+# Numerous always-ignore extensions #
+#####################################
+*.diff
+*.err
+*.orig
+*.rej
+*.swn
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+*.grunt
+*.tmp
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Node #
+#####################
+node_modules
+ 
+# Bower #
+#####################
+bower_components
+
+# Grunt #
+#####################
+# grunt-html-validation
+validation-status.json
+validation-report.json
+
+# eclipse#
+#####################
+.project
+
+# sublime #
+#####################
+*.sublime-project
+*.sublime-workspace
+
+# dreamweaver #
+###########################
+_notes
+dwsync.xml
+*.LCK
+_mm
+
+# Folders to ignore
+tmp/**/*
+
+#files with passwords, etc...
+*.no.vc.*
+
+# files used in grunt-contrib-copy for distribution #
+###########################
+#js/vendor/**/*
