@@ -1,2 +1,3 @@
-# cf101-fasttrack
-Intro Web Development course using HTML5 / CFML / MySQL / CSS / Less / Bootstrap UI &amp; Simpless
+# CF101 fasttrack to web development using cfml & web standards
+
+The overall purpose of the training is to provide 360° of web development skills using ColdFusion Markup Language (CFML), HTML5, CSS3 & Javascript using common libraries and industry standards including jQuery & Twitter Bootstrap UI.
