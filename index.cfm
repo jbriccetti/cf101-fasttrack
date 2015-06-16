@@ -8,7 +8,7 @@
 <body>
 <!--- basic request, cgi vars from the webserver --->
 <cfdump var="#cgi#" />
-
+ 
 
 </body>
 </html>
