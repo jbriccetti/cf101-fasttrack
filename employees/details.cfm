@@ -33,6 +33,8 @@
 </head>
 
 <body>
+<cfinclude template="../includes/nav.cfm" />
+
 <cfif url.debug EQ "true">
   <cfdump var="#url#" label="url variables" />
   <cfdump var="#info#" label="information from the result attribute of cfquery" />
@@ -51,9 +53,10 @@
           	<cfoutput>#q.first_name# #q.last_name#</cfoutput>
           </div>
           <div class="panel-body">
+            <p>next years salary:<cfoutput>#calcNewSalary(q.salary)#</cfoutput></p>
             <ul class="list-group">
 						<cfoutput query="q">
-							<li class="list-group-item">#dateformat(q.from_date,"mm/dd/yyyy")# #dollarformat(q.salary)#</li>
+							<li class="list-group-item">#dateformat(from_date,"mm/dd/yyyy")# #dollarformat(salary)#</li>
 						</cfoutput>
           	</ol>
             <cfdump var="#q#" />
@@ -66,3 +69,11 @@
 
 </body>
 </html>
+<cfdump var="#variables#" />
+  
+
+<cffunction name="calcNewSalary">
+	<cfargument name="currentpay" />
+  <cfset local.rate = 1.1 />
+  <cfreturn currentpay * rate />
+</cffunction>

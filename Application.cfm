@@ -1,2 +1,3 @@
 <cfset msg = "global" />
-<Cfset dsn ="employeedb" />
+<cfset dsn ="employeedb" />
+<cfset baseURL = "http://#cgi.http_host#/cf101/" />

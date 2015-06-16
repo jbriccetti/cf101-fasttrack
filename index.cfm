@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<cfinclude template="includes/nav.cfm" />
 <!--- basic request, cgi vars from the webserver --->
 <cfdump var="#cgi#" />
  

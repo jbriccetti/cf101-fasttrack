@@ -6,6 +6,9 @@
 </head>
 
 <body>
+<cfinclude template="../includes/nav.cfm" />
+
+
 
 
 <cfquery name="q" datasource="#dsn#">
