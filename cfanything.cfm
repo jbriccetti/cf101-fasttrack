@@ -3,12 +3,16 @@
 <head>
 <meta charset="utf-8">
 <title>Make anything Dynamic with CFM</title>
+<!--- dynamic css, html & js via cf, comments --->
+<!--- show how to use firebug, inspector and web developer toolbar --->
+<!--- show IDE basics (DW, Sublime) --->
+
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <!-- HTML COMMENT CREATED NOW: <cfoutput>#now()#</cfoutput>-->
 <!--- CFML COMMENT --->
 
 <!--- YOU CAN CREATE CSS INSTRUCTIONS --->
-<cfset color = "Blue" />
+<cfset color = "##f00" />
 <style>
 	h1 {color:<cfoutput>#color#</cfoutput>}
 </style>
