@@ -9,7 +9,7 @@
 <body>
 <cfinclude template="../includes/nav.cfm" />
 <cfparam name="url.show" default="" />
-<cfset examples = "lists,arrays,structures,queries" />
+<cfset examples = "lists,arrays,structures,queries,nested" />
 <cfif NOT listFindNoCase(examples,url.show)>
 	<cfset url.show = "" />
 </cfif>
@@ -18,8 +18,14 @@
 		<cfinclude template="#url.show#.cfm" />
 		<cfcatch>
     	<cfif cfcatch.Message CONTAINS "Could not find the included template">
-				<cffile action="write" file="#expandPath('./')##url.show#.cfm" output="file created #now()#" />
+				<cffile 
+        	action="write" 
+          file="#expandPath('./')##url.show#.cfm" 
+          output="file created #now()#" />
+        
         <cfinclude template="#url.show#.cfm" />
+			<cfelse>
+      	<!--- <cfdump var="#cfcatch#" /> --->
 			</cfif>	
     </cfcatch>
   </cftry>
