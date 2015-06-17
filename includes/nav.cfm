@@ -26,11 +26,21 @@
 						</cfoutput>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Art DB <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <cfoutput>
+              <li><a href="#baseURL#art/index.cfm">Art List</a></li>
+              <li><a href="#baseURL#art/artists.cfm">Artist List</a></li>
+              <li><a href="#baseURL#art/search.cfm">Search</a></li>
+						</cfoutput>
+          </ul>
+        </li>
       </ul>
       <cfoutput>
        <form action="#baseurl#employees/details.cfm" method="get" class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input name="emp_no" type="text" class="form-control" placeholder="Search">
+          <input name="emp_no" type="text" class="form-control" placeholder="Search by Emp No">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>

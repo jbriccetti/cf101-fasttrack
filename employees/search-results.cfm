@@ -1,4 +1,10 @@
 <!--- validate parameters --->
+<cfparam name="form.first_name" default="" />
+<cfparam name="form.last_name" default="" />
+
+<cfif NOT len(trim(form.last_name)) GTE 3>
+	<cflocation addtoken="no" url="search.cfm?err=last_name" /> 
+</cfif>
 
 <!--- query the database using passed search terms --->
 <cfquery name="q" datasource="#dsn#" result="info">
@@ -28,9 +34,10 @@
 	<cfdump var="#form#" />
 	<ol class="list-group">
 	<cfoutput query="q" maxrows="100">
-	<li class="list-group-item">#last_name#, #first_name#</li>
+	<li class="list-group-item"><a href="details.cfm?emp_no=#q.emp_no#">#last_name#, #first_name#</a></li>
 	</cfoutput>
   </ol>
+  <cfdump var="#info#" />
 </div>
 </body>
 </html>
