@@ -2,16 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>cf101 start</title>
+<title>Untitled Document</title>
 <cfinclude template="includes/head.cfm" />
-
 </head>
 
 <body>
 <cfinclude template="includes/nav.cfm" />
-<!--- basic request, cgi vars from the webserver --->
-<cfdump var="#cgi#" />
- 
-
+<div class="container">
+	content goes here
+</div>
 </body>
 </html>

@@ -28,6 +28,8 @@
 <head>
   <meta charset="utf-8">
   <title>Employee Detail Information</title>
+  <cfinclude template="../includes/head.cfm" />
+
 </head>
 
 <body>

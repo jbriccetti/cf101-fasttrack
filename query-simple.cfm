@@ -3,26 +3,32 @@
 <head>
 <meta charset="utf-8">
 <title>ColdFusion Queries</title>
+<cfinclude template="includes/head.cfm" />
 </head>
 
 <body>
+<cfinclude template="includes/nav.cfm" />
+<cfset cols = "ARTISTID,CITY,EMAIL,FIRSTNAME,LASTNAME,PHONE,POSTALCODE,STATE,THEPASSWORD" />
 <CFQUERY NAME="q" DATASOURCE="cfartgallery">
-  SELECT *  
+  SELECT #variables.cols#
   FROM ARTISTS 
-  JOIN ART ON ARTISTS.ARTISTID = ART.ARTISTID
-  ORDER BY lastname, firstname, ARTISTS.ARTISTID
 </CFQUERY>
-<cfdump var="#q.columnlist#" />
 
-<cfoutput query="q" group="lastname">
-	<h1>#lastname#</h1>
-  <cfoutput group="firstname">
-		<h2>#firstname#</h2>
-		<cfoutput>#artname#<br></cfoutput>
-	</cfoutput>
+<cfset ids = valueList(q.artistid) />
+<cfoutput>#ids#</cfoutput> 
+<br>
+
+<table class="table table-striped table-condensed">
+<cfoutput query="q">
+  <tr>
+  <cfloop list="#q.columnlist#" index="i">
+  	<td>#q[i][q.currentrow]#</td>
+  </cfloop>
+	</tr>
 </cfoutput>
+</table>
 
-<cfdump var="#q#" />
+
 <!--- option 1
 <CFQUERY NAME="q" DATASOURCE="cfartgallery">
   SELECT * 

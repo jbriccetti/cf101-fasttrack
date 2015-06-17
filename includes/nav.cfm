@@ -31,12 +31,14 @@
           </ul>
         </li> --->
       </ul>
-      <!--- <form class="navbar-form navbar-left" role="search">
+      <cfoutput>
+       <form action="#baseurl#employees/details.cfm" method="get" class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input name="emp_no" type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form> --->
+      </form>
+      </cfoutput> 
       <ul class="nav navbar-nav navbar-right">
         <li><a target="_blank" href="https://github.com/jbriccetti/cf101-fasttrack">GitHub Repo</a></li>
         <li class="dropdown">
