@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>cf101</title>
 <cfinclude template="includes/head.cfm" />
 </head>
 
