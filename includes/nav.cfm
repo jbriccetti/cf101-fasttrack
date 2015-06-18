@@ -8,21 +8,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <cfoutput><a class="navbar-brand" href="#baseURL#">CF 101</a></cfoutput>
+      <cfoutput><a class="navbar-brand" href="#request.vars.baseURL#">CF 101</a></cfoutput>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <cfoutput>
-          <li class="active"><a href="#baseURL#">HOME <span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="#request.vars.baseURL#">HOME <span class="sr-only">(current)</span></a></li>
         </cfoutput>
 				<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee DB <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <cfoutput>
-              <li><a href="#baseURL#employees/index.cfm">Employee List</a></li>
-              <li><a href="#baseURL#employees/search.cfm">Employee Search</a></li>
+              <li><a href="#request.vars.baseURL#employees/index.cfm">Employee List</a></li>
+              <li><a href="#request.vars.baseURL#employees/search.cfm">Employee Search</a></li>
 						</cfoutput>
           </ul>
         </li>
@@ -30,15 +30,15 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Art DB <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <cfoutput>
-              <li><a href="#baseURL#art/index.cfm">Art List</a></li>
-              <li><a href="#baseURL#art/artists.cfm">Artist List</a></li>
-              <li><a href="#baseURL#art/search.cfm">Search</a></li>
+              <li><a href="#request.vars.baseURL#art/index.cfm">Art List</a></li>
+              <li><a href="#request.vars.baseURL#art/artists.cfm">Artist List</a></li>
+              <li><a href="#request.vars.baseURL#art/search.cfm">Search</a></li>
 						</cfoutput>
           </ul>
         </li>
       </ul>
       <cfoutput>
-       <form action="#baseurl#employees/details.cfm" method="get" class="navbar-form navbar-left" role="search">
+       <form action="#request.vars.baseURL#employees/details.cfm" method="get" class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input name="emp_no" type="text" class="form-control" placeholder="Search by Emp No">
         </div>
@@ -66,7 +66,7 @@
 
 <!--- <cfoutput>
   <nav>
-    <a href="#baseURL#index.cfm">HOME</a>
-    <a href="#baseURL#employees/index.cfm">EMPLOYEES</a>
+    <a href="#request.vars.baseURL#index.cfm">HOME</a>
+    <a href="#request.vars.baseURL#employees/index.cfm">EMPLOYEES</a>
   </nav>
 </cfoutput> --->

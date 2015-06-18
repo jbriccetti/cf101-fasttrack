@@ -12,7 +12,7 @@
 
 
 
-<cfquery name="q" datasource="#dsn#">
+<cfquery name="q" datasource="#request.vars.dsn#">
 	SELECT EMP_NO,FIRST_NAME,GENDER,HIRE_DATE,LAST_NAME,BIRTH_DATE
   FROM employees 
   ORDER BY LAST_NAME,FIRST_NAME ASC

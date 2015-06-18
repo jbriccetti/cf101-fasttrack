@@ -10,7 +10,7 @@
 	<cflocation url="index.cfm" addtoken="no" />
 </cfif> --->
 
-<cfquery name="q" datasource="#dsn#" result="info">
+<cfquery name="q" datasource="#request.vars.dsn#" result="info">
 	SELECT *  
   FROM employees 
   JOIN salaries ON employees.emp_no = salaries.emp_no
@@ -56,7 +56,7 @@
             <p>next years salary:<cfoutput>#calcNewSalary(q.salary)#</cfoutput></p>
             <ul class="list-group">
 						<cfoutput query="q">
-							<li class="list-group-item">#dateformat(from_date,"mm/dd/yyyy")# #dollarformat(salary)#</li>
+							<li class="list-group-item">#request.app.displayDate(from_date)# #dollarformat(salary)#</li>
 						</cfoutput>
           	</ol>
             <cfdump var="#q#" />

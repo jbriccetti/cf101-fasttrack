@@ -7,7 +7,7 @@
 </cfif>
 
 <!--- query the database using passed search terms --->
-<cfquery name="q" datasource="#dsn#" result="info">
+<cfquery name="q" datasource="#request.vars.dsn#" result="info">
 	SELECT *  
   FROM employees 
 	<!--- add where clause based on passed params --->
