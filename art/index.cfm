@@ -19,6 +19,7 @@
 <body>
 <cfinclude template="../includes/nav.cfm" />
 <div class="container">
+<div class="text-right"><a href="maint/add.cfm">add new</a></div>
 <ul class="nav nav-tabs">
   <li role="presentation" <cfif url.sort EQ "artname">class="active"</cfif>><a class="btn btn-default" href="index.cfm?sort=artname">sort by name</a></li>
   <li role="presentation" <cfif url.sort EQ "price">class="active"</cfif>><a class="btn btn-default" href="index.cfm?sort=price">sort by price</a></li>
@@ -34,6 +35,7 @@
   	<div>#dollarformat(price)#</div>
   	<div>#description#</div>
     <a class="btn btn-default btn-sm" href="details.cfm?artid=#qart.artid#">more info</a>
+    <a class="btn btn-default btn-sm" href="maint/edit.cfm?artid=#qart.artid#">edit</a>
   </div>
 </div>
 </cfoutput>

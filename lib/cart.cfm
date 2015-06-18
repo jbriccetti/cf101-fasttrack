@@ -8,19 +8,18 @@
 <body>
 
 <cfscript>
-	cart = createObject("component","cart").init();
-	//cart = new cart();
+	//cart = createObject("component","cart").init();
+	cart = new cart();
 	cart.add("book");
 	cart.add("cd");
 	cart.add("book");
-	//cart.display();
-
+	cart.display();
 	cart.delete(2);
-	//cart.display();
+	cart.display();
 
 	cart.add("cd");
 	cart.add("book");
-	//cart.display();
+	cart.display();
 
 	cart.add("cd");
 	cart.add("book");
@@ -54,8 +53,9 @@
 	cart.add("book");
 	cart.add("cd");
 	cart.add("book");
-	//cart.display();
-	
+	cart.display();
+	cart.setName("olivers's awesome cart");
+	cart.display();
 </cfscript>
 
 <cfdump var="#cart.getItems()#" />
