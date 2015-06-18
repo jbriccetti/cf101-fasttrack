@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
+<cfinclude template="../../includes/head.cfm" />
 </head>
 
 <body>
+<cfinclude template="../../includes/nav.cfm" />
+<div class="container">
 <cfparam name="variables.err" default="" />
 <cfparam name="variables.showForm" default="true" />
 <cfparam name="form.artname" default="" />
+<cfparam name="form.price" default="0" />
+<cfset dao = new art() />
 
 <cfif formposted()>
 	form posted
@@ -20,7 +25,6 @@
     </ol>
 	<cfelse>
   	<cfscript>
-			dao = new art();
 			dao.create(form);
 			location("../index.cfm");
     </cfscript>
@@ -34,7 +38,7 @@
 		<input type="submit" name="add-record" value="submit" />  
   </form>
 </cfif>
-
+</div>
 
 
 <cffunction name="hasErrors">
@@ -45,8 +49,11 @@
 </cffunction>
 <cffunction name="validate">
 	<cfset local.result = "" />
-	<cfif form.artname EQ "">
+	<cfif form.artname EQ "" >
 		<cfset local.result &= "<li>art name cant be blank</li>" />
+	</cfif>
+	<cfif form.artname EQ "len" >
+		<cfset local.result &= "<li>no lens allowed</li>" />
 	</cfif>
 	<cfreturn result />
 </cffunction>
