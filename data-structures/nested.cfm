@@ -31,3 +31,11 @@
 	}
 </cfscript>
 
+<cffeed action="read" source="http://feeds.reuters.com/news/artsculture" name="news" />
+
+<ol>
+<cfloop array="#news.item#" index="i">
+	<li><cfoutput><a href="#i.link#" target="_blank">#i.title#</cfoutput></a></li>
+</cfloop>
+</ol>
+
